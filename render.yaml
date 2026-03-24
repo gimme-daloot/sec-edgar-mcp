@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: sec-edgar-mcp
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    plan: free  # upgrade to starter ($7/mo) for production
+    envVars:
+      - key: MCP_TRANSPORT
+        value: sse
+      - key: PORT
+        value: "10000"
+      - key: CONTACT_EMAIL
+        sync: false  # set in Render dashboard
+      - key: EDGAR_MCP_API_KEY
+        sync: false  # set in Render dashboard — your monetization secret
+      - key: FREE_DAILY_LIMIT
+        value: "10"
+    healthCheckPath: /health

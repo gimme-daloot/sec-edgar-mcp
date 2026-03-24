@@ -1,0 +1,74 @@
+# MCPize marketplace listing configuration
+# Reference: https://mcpize.com/docs/yaml-schema
+
+name: sec-edgar-intelligence
+version: "1.0.0"
+description: >
+  Real-time access to SEC EDGAR — the world's largest public repository of
+  corporate financial disclosures. Search 40M+ filings, pull 10-K/10-Q
+  financials, track insider trades (Form 4), run full-text searches across
+  all public company filings, and compare metrics across competitors.
+
+  Built for: financial analysts, investors, journalists, researchers,
+  M&A professionals, startup founders doing due diligence.
+
+author:
+  name: "Your Name"
+  email: "your@email.com"
+  url: "https://yoursite.com"
+
+category: finance
+
+tags:
+  - finance
+  - sec
+  - edgar
+  - investing
+  - stocks
+  - filings
+  - insider-trading
+  - financial-data
+  - due-diligence
+  - research
+
+tools:
+  - search_company
+  - get_recent_filings
+  - get_financial_facts
+  - get_insider_transactions
+  - get_full_text_search
+  - get_company_facts_summary
+  - get_filing_document
+  - compare_companies
+
+pricing:
+  model: freemium
+  tiers:
+    - name: Free
+      price: 0
+      period: monthly
+      limits:
+        calls_per_day: 10
+      description: "10 API calls/day — perfect for occasional research"
+    - name: Pro
+      price: 19
+      period: monthly
+      limits:
+        calls_per_day: unlimited
+      description: "Unlimited access — for active analysts and investors"
+    - name: Team
+      price: 49
+      period: monthly
+      limits:
+        seats: 5
+        calls_per_day: unlimited
+      description: "5 seats — for research teams and small funds"
+
+server:
+  # Replace with your deployed URL after deploying to Railway/Render
+  url: "https://YOUR-APP-URL.railway.app"
+  transport: sse
+  auth:
+    type: api_key
+    header: "X-API-Key"
+    env_var: EDGAR_MCP_API_KEY

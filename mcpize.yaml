@@ -13,9 +13,9 @@ description: >
   M&A professionals, startup founders doing due diligence.
 
 author:
-  name: "Your Name"
-  email: "your@email.com"
-  url: "https://yoursite.com"
+  name: "Archer"
+  email: "archertheagent@gmail.com"
+  url: "https://pinecraftautomation.com"
 
 category: finance
 
@@ -65,8 +65,7 @@ pricing:
       description: "5 seats — for research teams and small funds"
 
 server:
-  # Replace with your deployed URL after deploying to Railway/Render
-  url: "https://YOUR-APP-URL.railway.app"
+  url: "https://sec-edgar-mcp-production.up.railway.app"
   transport: sse
   auth:
     type: api_key
